@@ -7,7 +7,7 @@
 # * * * 
 # * * 
 # * 
-'''
+
 def printTriangle(N):
         for i in range(N,0,-1):
             for j in range(i):
@@ -15,4 +15,4 @@ def printTriangle(N):
             print()
 N=int(input())
 printTriangle(N)
-'''
+

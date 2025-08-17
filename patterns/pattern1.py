@@ -1,6 +1,5 @@
 
-# PATTERN 1
-# Example 1:            
+# PATTERN 1         
 # Input:              
 # n = 5                 
 # Output:               
@@ -21,13 +20,7 @@
 #            for j in range(n):         inner loop (columns)
 #                print("*", end=" ")    print star and end in used for new line
 #            print()                    print in inner loop
-def printSqaure(n):
-    for i in range(n):
-        for j in range(n):
-            print("* ",end=" ")
-        print()
-printSqaure(3)
-   #for taking input
+
 def printSqaure(n):
     for i in range(n):
         for j in range(n):
@@ -35,3 +28,4 @@ def printSqaure(n):
         print()
 n=int(input())
 printSqaure(n)
+
