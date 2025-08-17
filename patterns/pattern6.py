@@ -8,7 +8,7 @@
 # 1 
 
 
-def printTriangle(self, N):
+def printTriangle(N):
     for i in range(N, 0, -1):       # start from N down to 1
         for j in range(1, i+1):     # print numbers from 1 to i
             print(j, end=" ")

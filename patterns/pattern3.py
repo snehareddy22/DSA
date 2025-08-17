@@ -6,12 +6,12 @@
 # 1 2 3
 # 1 2 3 4
 # 1 2 3 4 5
-# 1 2 3 4 5 6
+# 1 2 3 4 5 6   rows=0to5  columns=range(1,7)
 
 
 def printTriangle(N):
-        for i in range(N):
-            for j in range(1,i+2):  #because range excludes  
+        for i in range(N):    #no of rows= N let N=6(0 to 5)
+            for j in range(1,i+2):  #because range excludes so it takes only upto i+1  (1,7)but takes upto 6
                 print(j,end=" ")
             print()
 N=int(input())
