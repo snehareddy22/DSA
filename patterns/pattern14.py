@@ -8,7 +8,7 @@
 # A B C D E
 # A B C D E F
 def printTriangle(N):
-    for i in range(1, N + 1):          # rows: 1..N
+    for i in range(N):          # rows: 1..N
         for j in range(i):             # columns: 0..i-1
             ch = chr(ord('A') + j)     # A, B, C, ...
             print(ch, end=" ")

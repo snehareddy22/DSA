@@ -14,13 +14,13 @@
 #      *
 def printTriangle(N):
     # 1st Half (increasing triangle)
-    for i in range(1, N+1):       # loop from 1 → N
+    for i in range(N):       # loop from 1 → N
         for j in range(i):        # print i stars
             print("*", end="")
         print()                   # new line
     
     # 2nd Half (decreasing triangle)
-    for i in range(N-1, 0, -1):   # loop from N-1 → 1
+    for i in range(N, 0, -1):   # loop from N-1 → 1
         for j in range(i):        # print i stars
             print("*", end="")
         print()                   # new line

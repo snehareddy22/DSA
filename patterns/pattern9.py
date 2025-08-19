@@ -20,13 +20,13 @@ def printTriangle(N):
             for j in range(2*i-1):        # inner loop for stars
                  print("*", end="")
             print()   
-        for i in range(1, N ):
+        for i in range(N,0,-1):
         # print spaces
-            for j in range(i - 1):
+            for j in range(N - i):
                 print(" ", end="")
-            # print stars
-            for j in range(2*(N-i) + 1):
-                print("*", end="")
+        # print stars
+            for j in range(2*i- 1):
+                print("*",end="")
             print()  # new line after each row
 N=int(input())
 printTriangle(N)

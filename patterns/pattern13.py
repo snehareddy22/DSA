@@ -10,7 +10,7 @@
 def printTriangle(N):
     num = 1   # starting number
     for i in range(1, N+1):        # rows
-        for j in range(1, i+1):    # columns
+        for j in range(i):    # columns
             print(num, end=" ")
             num += 1
         print()   # new line after each row
