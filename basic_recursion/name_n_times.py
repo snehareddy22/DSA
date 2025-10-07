@@ -1,14 +1,19 @@
 #Print Name N times using Recursion
-def func(i,n):   #i=store current value   n stores total times to print
-#base condition
-    if i>n:
-        return
-#work
-    print("sneha")
-#recursive calling
-    func(i+1,n)
-#driver code
-n=int(input())
-func(1,n)          
-#func(1, n) → prints once → calls func(2, n)
-#func(2, n) → prints once → calls func(3, n) … until i > n, then recursion stops.
+def func(name,n):   #n is total times to print
+    if n==0:        #base condition
+        return 
+    print(name)     
+    func(name,n-1)  #recursive calling
+n=int(input())      #driver code
+func("sneha",n)        
+'''
+Sneha   # n=5
+Sneha   # n=4
+Sneha   # n=3
+Sneha   # n=2
+Sneha   # n=1
+recusrion stops calling at n=0
+'''
+
+#TC=O(N)
+#SC=O(N)

@@ -10,7 +10,7 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = key   # insert key at correct position
 arr = list(map(int, input("Enter array elements separated by space: ").split()))
-
 insertion_sort(arr)
-
 print("Sorted array:", arr)
+
+#tc=o(n2)

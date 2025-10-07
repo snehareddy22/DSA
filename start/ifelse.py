@@ -1,4 +1,3 @@
-
 '''Given marks of a student, print on the screen:
 Grade A if marks >= 90
 Grade B if marks >= 70
@@ -15,7 +14,7 @@ Output: Fail
 Explanation: marks are less than 35.
 '''
 
-marks=int(input())
+marks=int(input())    #take marks as input
 if marks>=90:
     print("Grade A")
 elif marks>=70:

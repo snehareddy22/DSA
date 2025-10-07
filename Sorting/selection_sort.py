@@ -1,7 +1,7 @@
 #selection sorting(ao)
 def selection_sort(arr):
     n=len(arr)
-    for i in range(n):#assume index 0 is min value
+    for i in range(n-1):#assume index 0 is min value
         min_num=i
         for j in range(i+1,n):   #from second elemnt to exclude last element 
             if arr[j]<arr[min_num]: #find actual min
@@ -10,3 +10,4 @@ def selection_sort(arr):
 arr=list(map(int,input("enter array elemnts").split()))
 selection_sort(arr)
 print(arr)
+#tc=o(n2)

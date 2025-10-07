@@ -1,4 +1,4 @@
-#Print name N times using recursion
+#Print 1 to N using recursion
 def func(i,n):
     if i>n:
         return
@@ -7,15 +7,22 @@ def func(i,n):
 n=int(input())
 func(1,n)
     
-
+#best way
 def printNumbers(n):
-    # base case
-    if n == 0:
+    if n == 0:              # base case
         return
-    # recursive call first
-    printNumbers(n - 1)
-    # then print current number
-    print(n)
-# Driver code
-n = int(input("Enter n: "))
+    printNumbers(n - 1)     # recursive call first
+    print(n)                # then print current number
+n = int(input("Enter n: "))  # Driver code
 printNumbers(n)
+
+#n = 5
+# printNumbers(5)
+#   printNumbers(4)
+#     printNumbers(3)
+#       printNumbers(2)
+#         printNumbers(1)
+#           printNumbers(0) → returns
+
+#TC = O(n)
+#SC = O(n)

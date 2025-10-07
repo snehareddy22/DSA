@@ -1,13 +1,8 @@
-#Factorial of a Number : Iterative and Recursive
-def factorial_recursive(x):
-    # base case
-    if x == 0 or x == 1:
-        return 1
-    
-    # recursive case
-    return x * factorial_recursive(x - 1)
-
-# Driver code
+#Factorial of a Number Recursive
+def factorial_recursive(n):
+    if n == 0 or n == 1:    # base case
+        return 1 
+    return n * factorial_recursive(n - 1)   # recursive case
 n = int(input("Enter a number: "))
 print("Factorial (Recursive) of", n, "is:", factorial_recursive(n))
 
@@ -23,16 +18,14 @@ print("Factorial (Recursive) of", n, "is:", factorial_recursive(n))
 
 
 #Iterative Way (using a loop)
-def factorial_iterative(x):
+def factorial_iterative(n):
     fact = 1
-    for i in range(1, x + 1):
+    for i in range(1, n + 1):
         fact *= i
     return fact
-
-# Driver code
 n = int(input("Enter a number: "))
 print("Factorial (Iterative) of", n, "is:", factorial_iterative(n))
-
+#eg n=5
 # fact = 1
 # 1*1 = 1
 # 1*2 = 2

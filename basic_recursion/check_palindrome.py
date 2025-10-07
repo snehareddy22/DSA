@@ -1,77 +1,66 @@
-# #Check if the given String is Palindrome or not
-# Problem Statement: "Given a string, check if the string is palindrome or not."  A string is 
-# said to be palindrome if the reverse of the string is the same as the string.
-# Example 1:
-# Input: Str =  “ABCDCBA”
-# Output: Palindrome
-# Explanation: String when reversed is the same as string.
-# Example 2:
-# Input: Str = “TAKE U FORWARD”
-# Output: Not Palindrome
-# Explanation: String when reversed is not the same as string.
+#Check if the given String is Palindrome or not
+#LC LINK= https://leetcode.com/problems/valid-palindrome/submissions/1793394356/
 
-
-def isPalindromeRecursive(s, left, right):
-    # Base Case 1: If left >= right, all chars matched → palindrome
-    if left >= right:
+#two pointers method
+def isPalindromeRecursive(s, start, end):
+    if start >= end:
         return True
-    
-    # Base Case 2: If characters don't match → not a palindrome
-    if s[left] != s[right]:
+    return (s[start] == s[end]) and isPalindromeRecursive(s, start + 1, end - 1)
+print(isPalindromeRecursive("madam", 0, 4))  
+
+#eg
+# Call: start=0, end=4
+# Match: m == m ✅ → recurse
+# Call: start=1, end=3
+# Match: a == a ✅ → recurse
+# Call: start=2, end=2
+# Base case reached ✅
+# Result: True
+
+#tc=o(n)
+#sc=o(n)
+
+#Functional Recursion
+def is_palindrome(s):
+    if len(s) <= 1:   # base case: empty or single char
+        return True
+    if s[0] != s[-1]:  # mismatch
         return False
-    
-    # Recursive step: move inward
-    return isPalindromeRecursive(s, left + 1, right - 1)
+    return is_palindrome(s[1:-1])  # recurse on substring
+print(is_palindrome("madam"))   # True
+print(is_palindrome("hello"))   # False
 
-s1 = "ABCDCBA"
-s2 = "TAKE U FORWARD"
+# "madam" → compares 'm' and 'm', then recurses on "ada".
+# "ada" → compares 'a' and 'a', then recurses on "d".
+# "d" → length ≤ 1 → base case → return True.
+# "madam" is palindrome.
+# "hello" → compares 'h' and 'o' → mismatch → return False.
 
-print(f"{s1}: {'Palindrome' if isPalindromeRecursive(s1, 0, len(s1) - 1) else 'Not Palindrome'}")
-print(f"{s2}: {'Palindrome' if isPalindromeRecursive(s2, 0, len(s2) - 1) else 'Not Palindrome'}")
+#tc=o(n)
+#sc=o(n)
 
-# Input: "ABCDCBA"
-# Step 1: Compare A == A
-# Step 2: Compare B == B
-# Step 3: Compare C == C
-# Step 4: Compare D == D (center reached)
-# ✅ Palindrome
 
-# Input: "TAKE U FORWARD"
-# Step 1: Compare T != D → ❌ Not Palindrome
 
-# Function to check if a string is a palindrome
-def isPalindrome(s):
-    # Initialize two pointers: one at the start, one at the end
-    left = 0
-    right = len(s) - 1
-
-    # Loop until the two pointers meet
-    while left < right:
-        # Skip left character if it is not alphanumeric (ignores spaces, punctuation)
-        if not s[left].isalnum():
-            left += 1
-        # Skip right character if it is not alphanumeric
-        elif not s[right].isalnum():
+#LC question
+class Solution:
+    def isPalindrome(self, s):   
+        s = s.lower()                   #Convert the string to lowercase
+        left, right = 0, len(s) - 1     #Initialize two pointers: start and end of the string
+        while left < right:
+            while left < right and not s[left].isalnum(): #Skip non-alphanumeric chars from the left
+                left += 1
+            while left < right and not s[right].isalnum(): #Skip non-alphanumeric chars from the right
+                right -= 1
+            if s[left] != s[right]:    # Compare characters at left and right pointers
+                return False
+            left += 1                  # Move pointers inward
             right -= 1
-        # If characters at left and right don't match (case insensitive), not a palindrome
-        elif s[left].lower() != s[right].lower():
-            return False
-        else:
-            # If they match, move both pointers closer
-            left += 1
-            right -= 1
+        return True
+# Test locally
+sol = Solution()
+print(sol.isPalindrome("A man, a plan, a canal: Panama"))  # True
+print(sol.isPalindrome("race a car"))                      # False
+print(sol.isPalindrome(" "))                               # True
 
-    # If loop completes, it's a palindrome
-    return True
-
-
-# Main block to test the function
-# Input string
-s = "ABCDCBA"   # Change this value to test other strings
-# Function call
-ans = isPalindrome(s)
-# Output
-if ans:
-    print("Palindrome")
-else:
-    print("Not Palindrome")
+#TC O(n)	
+#SC O(1)	

@@ -10,10 +10,11 @@
 # Function to print the alphabet pattern
 def print_alphabet_pattern(N):
     for i in range(N):
-        # Get the corresponding uppercase letter (A, B, C, ...)
-        letter = chr(65 + i)  # 65 is ASCII value for 'A'
-        # Print the letter i+1 times separated by space
-        print((letter + ' ') * (i + 1))
-N = int(input())
+        ch = chr(65 + i)  # ASCII value of 'A' is 65
+        for j in range(i + 1):
+            print(ch, end=" ")
+        print()
+# Example: input
+N = int(input("Enter N: "))
 print_alphabet_pattern(N)
 
