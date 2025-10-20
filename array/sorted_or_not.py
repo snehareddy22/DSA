@@ -1,7 +1,7 @@
 #Check if the Array is Sorted 
 #LC LINK:https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
 
-#brute force approach
+#brute force approach(2 iterations)
 def is_sorted(arr):
     n=len(arr)
     for i in range(n):          #check for all numbers in an array
@@ -16,10 +16,10 @@ print(is_sorted(arr))
 # Space Complexity: O(1)
 
 
-#optimal approach
+#optimal approach(1 iteration)
 def is_Sorted(arr, n):
     n=len(arr)
-    for i in range(1, n):
+    for i in range(1, n):   # if we check arr[i] < arr[i - 1]  then we get index 0,-1 so we take from 1-n as range
         if arr[i] < arr[i - 1]:
             return False  
     return True                   # return True if no decreasing pair found
@@ -36,11 +36,13 @@ class Solution(object):
         n=len(nums)
         count=0
 #since we’re dealing with rotated arrays, we must also compare the last element with the first element.
-#count = 0 → already sorted
+#count = 0 → Sorted (Not Rotated)
 # count = 1 → sorted + rotated
-# count ≥ 2 → not possible
+# count > 1 → Not Sorted or Rotated Properly
         for i in range(n):
             if nums[i]>nums[(i+1)%n]:
+#The expression (i + 1) % n ensures that when i reaches the last index,
+#it wraps around to index 0 (the first element).
                 count+=1
         return count<= 1
 sol=Solution()
@@ -48,4 +50,4 @@ print(sol.check([3,4,5,1,2]))  # True
 print(sol.check([2,1,3,4]))    # False
 print(sol.check([1,2,3]))      # True
 print(sol.check([1,1,1]))      # True
-    
+
