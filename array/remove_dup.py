@@ -13,7 +13,7 @@ def remove_dup(arr,n):
     for i in range(0,res):        #add all the elemnts of res into the arr
         arr[i]=temp[i]
     return res                    #return the res
-'''
+
 # Time: O(n) (two passes: one to find uniques, one to copy back)
 # Space: O(n) (uses extra temp array)
 
@@ -34,7 +34,7 @@ print(remove_dup(arr,n))
 
 # Time: O(n)
 # Space: O(1) (true in-place, no extra array)
-'''
+
 
 #lc code
 class Solution:
