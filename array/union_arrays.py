@@ -26,8 +26,8 @@ print(union_array(arr1,arr2))
 #Space Complexity:O(n + m)
 
 
-
-def union_array(arr1a,rr2):
+#optimal approch using two pointers
+def union_array(arr1,rr2):
     i, j = 0, 0   #i → pointer for arr1 ,j → pointer for arr2
     union = []    #store unique elements in sorted order
     while i < len(arr1) and j < len(arr2):  #Keep looping as long as both arrays have elements left
