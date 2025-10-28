@@ -49,10 +49,10 @@ def find_missing(arr):
     n = len(arr)
     xor1 = 0   #initialize
     xor2 = 0
-    # XOR of all numbers from 1 to n+1
+    # XOR1 of all numbers from 1 to n+1
     for i in range(1, n + 2):
         xor1 ^= i
-    # XOR of all elements in the array
+    # XOR2 of all elements in the array
     for num in arr:
         xor2 ^= num
     # Missing number

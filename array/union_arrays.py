@@ -29,13 +29,12 @@ print(union_array(arr1,arr2))
 #optimal approch using two pointers
 def union_array(arr1,rr2):
     i, j = 0, 0   #i → pointer for arr1 ,j → pointer for arr2
-    union = []    #store unique elements in sorted order
+    union = []    
     while i < len(arr1) and j < len(arr2):  #Keep looping as long as both arrays have elements left
         if arr1[i] <= arr2[j]:
             if len(union) == 0 or union[-1] != arr1[i]:
-            #We only add to union if the last element in union is not equal to the new element
-                union.append(arr1[i])
-            i += 1
+                union.append(arr1[i])   #We add to union if the last element in union is not equal to the new element
+            i += 1                      #move the pointer farword
         else:
             if len(union) == 0 or union[-1] != arr2[j]:
                 union.append(arr2[j])
