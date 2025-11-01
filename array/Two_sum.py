@@ -57,3 +57,5 @@ def two_sum_two_pointer(arr, target):
 arr = list(map(int, input("Enter array: ").split()))
 target = int(input("Enter target sum: "))
 print(two_sum_two_pointer(arr, target))
+#TC=o(nlogn)
+#sc=o(1)
