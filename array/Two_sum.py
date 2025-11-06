@@ -13,6 +13,7 @@ print(two_sum(arr, target))
 #TC=O(n2)
 #SC=O(1)
 
+
 #optimal approach(hashmap)
 def two_sum(arr, target):
     seen = {}               # store {number: index}
@@ -21,7 +22,6 @@ def two_sum(arr, target):
         if rem in seen:     # if we’ve seen the needed number
             return True     # pair found
         seen[num] = i       # store current number with its index 
-#later when we find a number’s complement (rem),we can quickly check in O(1) time if it was seen earlier.
     return False            # no pair found
 arr = list(map(int, input().split()))
 target = int(input())
@@ -42,7 +42,7 @@ class Solution(object):
 
 
 #optimal approach(Two pointers)
-def two_sum_two_pointer(arr, target):
+def two_sum(arr, target):
     arr.sort()  # make sure array is sorted
     left, right = 0, len(arr) - 1
     while left < right:
@@ -56,6 +56,6 @@ def two_sum_two_pointer(arr, target):
     return False
 arr = list(map(int, input("Enter array: ").split()))
 target = int(input("Enter target sum: "))
-print(two_sum_two_pointer(arr, target))
+print(two_sum(arr, target))
 #TC=o(nlogn)
 #sc=o(1)

@@ -1,5 +1,6 @@
 #Sort an array of 0s, 1s and 2s
 
+
 #brute force(using sorting technique)
 def sort_array(arr):
     arr.sort()
