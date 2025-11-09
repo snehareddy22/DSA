@@ -6,19 +6,15 @@ class Solution:
         perms = sorted(set(permutations(nums))) # Generate all unique permutations
         current = tuple(nums)                   # Convert list to tuple for comparison
         for i in range(len(perms)):             # Traverse the list
-            if perms[i] == current:              # If last permutation, return first
+            if perms[i] == current:             # If last permutation, return first
                 if i == len(perms) - 1:
-                    return list(perms[0])         # Else return next
+                    return list(perms[0])       # Else return next
                 return list(perms[i + 1])
         return nums
-sol = Solution()
-nums = [1, 2, 3]
-result = sol.nextPermutation(nums)
-print(" ".join(map(str, result)))
-
-# Complexity
 # TC= O(N!*N)
 #SC=O(N!)
+
+#optimal approach
 class Solution:
     def nextPermutation(self, nums):
         n = len(nums)
@@ -29,9 +25,8 @@ class Solution:
             j = n - 1
             while nums[j] <= nums[i]:
                 j -= 1
-            nums[i], nums[j] = nums[j], nums[i]  # swap
-        nums[i + 1:] = reversed(nums[i + 1:])    # Step 3: Reverse the suffix
+            nums[i], nums[j] = nums[j], nums[i]   # swap
+        nums[i + 1:] = reversed(nums[i + 1:])     # Step 3: Reverse the suffix
         return nums  
-# Complexity:
 #  Time: O(n)
 #  Space: O(1)

@@ -1,5 +1,4 @@
 #Rearrange Array Elements by Sign
-
 #brute force
 class Solution:
     def rearrangeArray(self, nums):
@@ -17,7 +16,6 @@ class Solution:
             res.append(pos[i])
             res.append(neg[i])
         return res
-
 #TC=O(n)
 #SC=O(n)
 
@@ -36,6 +34,5 @@ class Solution:
                 res[negIndex] = num
                 negIndex += 2   
         return res
-
 #TC=O(n)
 #SC=O(1)
