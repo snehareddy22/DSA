@@ -19,7 +19,6 @@ print(longest_consecutive(arr))
 #SC=O(1)
 
 
-
 #better apprach using sorting
 def longest_consecutive(arr):
     n = len(arr)
@@ -61,6 +60,28 @@ print(longest_consecutive(arr))
 #TC=O(n)
 #SC=O(n)
 
+
+
+def longest_consecutive(nums):
+    # If the list is empty, return 0
+    if not nums:
+        return 0
+    # Convert list to a set to remove duplicates and allow O(1) lookups
+    num_set = set(nums)
+    longest = 0
+    # Check each number
+    for num in num_set:
+        # Only start counting if it's the start of a sequence
+        if num - 1 not in num_set:
+            current = num
+            count = 1
+            # Count consecutive numbers
+            while current + 1 in num_set:
+                current += 1
+                count += 1
+            # Update the longest streak
+            longest = max(longest, count)
+    return longest
 
 
 
