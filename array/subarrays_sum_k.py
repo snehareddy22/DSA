@@ -1,6 +1,6 @@
 #Count Subarray sum Equals K
 
-#brute force
+#brute force(checking all possible subarrays)
 def subarraySum(nums, k):
     n = len(nums)
     count = 0
