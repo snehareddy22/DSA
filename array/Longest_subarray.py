@@ -37,3 +37,13 @@ print(longest_subarray_sum_k(arr,target))
 #tc=o(n)
 # sc=o(1)
 
+def longest_subarray(arr,k):
+    n=len(arr)
+    sum=0
+    for i in range(n):
+        sum+=arr[i]
+        if sum==k:
+            return sum
+arr =list(map(int,input().split())) 
+k=int(input())
+print(longest_subarray(arr,k))

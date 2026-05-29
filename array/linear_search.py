@@ -6,13 +6,12 @@
 # Input: arr[]= 5 4 3 2 1, num = 5
 # Output: 0
 def linear_search(arr, n):
-    for i in range(len(arr)):
+    for i in range(n):
         if arr[i] == n:
             return i
     return -1
 n=int(input())
 arr=list(map(int,input().split()))
 print(linear_search(arr,n))
-
 #TC=O(n)
 #SC=O(1)

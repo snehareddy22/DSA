@@ -45,9 +45,4 @@ class Solution(object):
 #it wraps around to index 0 (the first element).
                 count+=1
         return count<= 1
-sol=Solution()
-print(sol.check([3,4,5,1,2]))  # True
-print(sol.check([2,1,3,4]))    # False
-print(sol.check([1,2,3]))      # True
-print(sol.check([1,1,1]))      # True
 

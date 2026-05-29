@@ -74,7 +74,4 @@ class Solution(object):
         for j in nums:
             xor2^=j
         return xor1^xor2
-Sol=Solution()
-print(Sol.missingNumber([3,0,1]))
-print(Sol.missingNumber([0,1]))    
-print(Sol.missingNumber([9,6,4,2,3,5,7,0,1]))  
+

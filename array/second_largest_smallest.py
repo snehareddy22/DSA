@@ -53,25 +53,33 @@ print(second_largest_and_smallest(arr))
 
 
 
-#optimal approch(using 1 iteraraion)
-def second_largest(arr):
-    if len(arr) <= 1:     #edgecase
-        return None 
-    largest=arr[0]       #assume largest=first elemnt
-    second_largest=None   #initialize second largest
-    for i in arr[1:]:      #start loop from 1 to n
-        if i >largest:     #if i is larger than largest elemnt
-            second_largest=largest            #largest is kept in second largest
-            largest=i                         #i is kept in largest
-        elif i<largest:     #if i is smaller than largest
-            if second_largest is None or i>second_largest:   #largest will not change
-                second_largest=i                             #i is kept in seocond largest
-    return second_largest
-arr = list(map(int, input("Enter elements: ").split()))
-print(second_largest(arr))
+def second_smallest_largest(arr):
+    if len(arr) < 2:
+        return None, None
+    smallest = float('inf')
+    second_smallest = float('inf')
+    largest = float('-inf')
+    second_largest = float('-inf')
+    for i in arr:
+        # For smallest & second smallest
+        if i < smallest:
+            second_smallest = smallest
+            smallest = i
+        elif smallest < i < second_smallest:
+            second_smallest = i
 
-#TC=o(n)
-#SC=o(1)
+        # For largest & second largest
+        if i > largest:
+            second_largest = largest
+            largest = i
+        elif second_largest < i < largest:
+            second_largest = i
+
+    # if duplicates caused no valid second values
+    if second_smallest == float('inf') or second_largest == float('-inf'):
+        return None, None
+
+    return second_smallest, second_largest
 
 
 

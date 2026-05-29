@@ -20,8 +20,7 @@ def left_rotate(arr):
         arr[i-1] = arr[i]    #shift all elemnts to left by 1 place
     arr[-1]=last              #place first elment at last
     return arr
-arr=list(map(int,input().split()))
-print(left_rotate(arr))
+
 
 # Time Complexity: O(n)
 # Space Complexity: O(1)
